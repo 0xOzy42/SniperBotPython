@@ -277,7 +277,6 @@ class SniperBot:
                 break
         print(style().GREEN + "[DONE] Wait Blocks finish!")
 
-    # DEV : A adapter avec le smart contract ***
     def awaitLiquidity(self):
         # spinner = Halo(text="await Liquidity", spinner=spinneroptions)
         # spinner.start()
@@ -294,7 +293,6 @@ class SniperBot:
                 continue
         print(style().GREEN + "[DONE] Liquidity is Added!" + style().RESET)
 
-    # DEV : A adapter avec le smart contract ***
     def awaitEnabledBuy(self):
         # spinner = Halo(text="await Dev Enables Swapping", spinner=spinneroptions)
         # spinner.start()
@@ -311,7 +309,6 @@ class SniperBot:
                 continue
         print(style().GREEN + "[DONE] Swapping is Enabled!" + style().RESET)
 
-    # DEV : A adapter avec le smart contract / TRAILING STOP / TP / SL*** (TP ok, manque le reste)
     def awaitManagePosition(self):
         highestLastPrice = 0
         TokenBalance = round(self.TXN.get_token_balance(), 5)
@@ -328,7 +325,7 @@ class SniperBot:
                     )
                     self.awaitSell()
                     break
-            if self.takeProfitOutput != 0:  # en cours de TEST ! (Done)
+            if self.takeProfitOutput != 0:
                 if LastPrice * TokenBalance >= self.takeProfitOutput:
                     print()
                     print(style().GREEN + "[TAKE PROFIT] Triggert!" + style().RESET)
@@ -340,7 +337,6 @@ class SniperBot:
                     print(style().GREEN + "[STOP LOSS] Triggert!" + style().RESET)
                     self.awaitSell()
                     break
-            # bosser sur les outputs pour avoir le suivi du trade (en % ou juste comparer prix entrée + prix sortie)
             msg = str(
                 "Token Balance: "
                 + str("{0:.5f}".format(TokenBalance))

@@ -73,13 +73,13 @@ class TXN:
         with open("./ABI/BSC_Swapper.json") as f:
             info_json = json.load(f)
         abi_bsc = info_json
-        bscContract = "0xAfbd3c3ED030d45484E10334aB9b15C3414DD142"
+        bscContract = "0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         contract_bsc = self.w3.eth.contract(address=bscContract, abi=abi_bsc)
         return contract_bsc
 
     def set_swap(self):  # SET ADDRESS CONTRACT + ABI
         swapper_address = Web3.toChecksumAddress(
-            "0xE021bb3995411f27A1B4a0C8743107Bc1CC40B4E"  # change contract address here
+            "0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"  # change contract address here
         )
         with open("./ABI/SWAPRICE.json") as f2:
             contract_abiX = json.load(f2)
